@@ -26,6 +26,23 @@ void Calling_Sentence(){
 				case 1:
 					 system("CLS");	
 					 strcpy(Levels.Easy_Level, "Apart from the cost, shared flats and houses are often in poor condition.\nLandlords are slow to spend their profits on repairs.\n");									
+					 Realize(Levels.Easy_Level);
+					 break;
+				case 2:
+					 system("CLS");	
+					 strcpy(Levels.Medium_Level, "They walked along a lane out of the village until they reached a gently winding path that \nled to the river. After crossing a wooden bridge, they  trees kept off their heads.");
+					 Realize(Levels.Medium_Level);								
+					 break;
+           	 	
+				case 3:
+					 system("CLS");	
+					 strcpy(Levels.Hard_Level, "It wasnt long before a group of US soldiers on motorcycles stopped.\nThey were on their way to a wine festival on the Moselle River and were thrilled to have \nfemale companionship. Over the next eight months, we covered a lot of ground.");
+					 Realize(Levels.Hard_Level);										
+					 break;
+					 
+				case 4: 
+					 transition = false;
+					 system("CLS");	
 					 break;
 				default: 
 					printf("Enter the correct value");
