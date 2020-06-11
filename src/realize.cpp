@@ -92,7 +92,7 @@ void realize (char Sentence[])
 		score = 0;
 		printf("You missed out in 60 seconds and your score was negative, Your score: %.2f", score);
 	}
-  	
+  	Add_New_Record(score,time_all);
 }
 
 
