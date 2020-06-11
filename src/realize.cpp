@@ -66,14 +66,10 @@ void realize (char Sentence[])
 		}
 		p = strtok (NULL, delim);
     }
+    SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
     printf("%f", score);
 }
-int main()
-{
-    char Sentence[100] = "Ball start stop";
-    realize(Sentence);
-    return 0;
-}
+
 
 
 
