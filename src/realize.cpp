@@ -67,7 +67,32 @@ void realize (char Sentence[])
 		p = strtok (NULL, delim);
     }
     SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
-    printf("%f", score);
+    system("CLS");
+    float multiplier = 0;
+    multiplier = 60/time_all;
+  	if(time_all <= 60 && score > 0){
+  	score*=multiplier;
+  	if(k==0){
+  		score +=25;
+  		printf("You typed all the words without errors and completed in 60 seconds, Your score: %.2f", score);
+	  }
+	  else {
+	  	printf("You had a mistake in words, and you met in 60 seconds, Your score: %.2f", score);
+	  }
+	}
+	if(time_all > 60 && score > 0){
+		score = 0;
+		printf("you typed for more than 60 seconds, Your score: %.2f", score);
+	}
+  	if(time_all <= 60 && score <= 0){
+		score = 0;
+		printf("Your score at the end of the workout was negative, Your score: %.2f", score);
+	}
+	if(time_all > 60 && score < 0){
+		score = 0;
+		printf("You missed out in 60 seconds and your score was negative, Your score: %.2f", score);
+	}
+  	
 }
 
 
