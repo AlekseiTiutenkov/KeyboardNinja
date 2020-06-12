@@ -1,3 +1,11 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+#include <windows.h>
+
 void Print_Records() {
 	file = fopen("Records.txt", "rb");
     while(fread(& Player1, sizeof(Player1) , 1, file)){
