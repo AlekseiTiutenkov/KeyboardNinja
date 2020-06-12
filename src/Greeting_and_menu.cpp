@@ -17,6 +17,7 @@ int Greeting_and_menu(){
         SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 4));
         printf("\nEnter 0 for game rules.");
         SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
+		printf("\nEnter 1 to start.\n");
 		printf("\n-----------------------------------------------------\n");
         scanf("%s", &num);
         num -= 48;
@@ -39,6 +40,10 @@ int Greeting_and_menu(){
                     system("CLS");
                     break;
                 }
+            case 1:
+                system("CLS");
+                Calling_Sentence();
+                break;
 			default: 
                 printf("Enter the correct value");
                 Sleep(2000);
