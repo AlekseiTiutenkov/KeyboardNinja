@@ -1,0 +1,2 @@
+void Console_color(){
+}
