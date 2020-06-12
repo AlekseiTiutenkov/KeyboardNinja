@@ -54,7 +54,6 @@ int Greeting_and_menu(){
                 printf("\n-----------------------------------\n");
                 if(getch()){
                     SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
-                    fclose(file);
                     system("CLS");
                     break;
                 }
