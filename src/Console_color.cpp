@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <iostream>
 #include <conio.h>
 #include <string.h>
 #include <windows.h>

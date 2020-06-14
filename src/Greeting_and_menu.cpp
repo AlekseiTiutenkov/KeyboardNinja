@@ -1,10 +1,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <iostream>
 #include <conio.h>
 #include <string.h>
 #include <windows.h>
+#include "Calling_Sentence.hpp"
+#include "Print_Records.hpp"
+#include "Delete_record.hpp"
+#include "main.hpp"
+
+Player Player1;
+Lvl Levels;
+
+FILE *file, *update_file;
+
 
 int Greeting_and_menu(){
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

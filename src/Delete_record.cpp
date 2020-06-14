@@ -4,6 +4,11 @@
 #include <conio.h>
 #include <string.h>
 #include <windows.h>
+#include "main.hpp"
+
+extern Player Player1;
+extern Lvl Levels;
+extern FILE *file, *update_file;
 
 void Delete_record(){
 	char update_name[20];
@@ -19,7 +24,7 @@ void Delete_record(){
     file=fopen("Records.txt" ,"wb");
     update_file=fopen("new.txt" ,"rb");
     puts("Enter name: ");
-    scanf("%s", &update_name);
+    scanf("%s", update_name);
     while (fread(&Player1,sizeof(Player1),1,update_file)){
     	if(strcmp(Player1.name,update_name)!=0)
     		fwrite(&Player1, sizeof(Player1),1, file);

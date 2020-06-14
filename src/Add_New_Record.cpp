@@ -4,16 +4,14 @@
 #include <conio.h>
 #include <string.h>
 #include <windows.h>
+#include "main.hpp"
 
-struct Player{
-	float data;
-	char name[20];
-	float time_man;
-}Player1; 
-
-FILE *file, *update_file;
+extern Player Player1;
+extern Lvl Levels;
+extern FILE *file, *update_file;
 
 int Add_New_Record(float score, float time_all) {
+	
 	char string[20] = {'\0'};
 	
 	printf("\nEnter your name: ");

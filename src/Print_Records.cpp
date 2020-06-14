@@ -1,10 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <iostream>
 #include <conio.h>
 #include <string.h>
 #include <windows.h>
+#include "main.hpp"
+
+extern Player Player1;
+extern Lvl Levels;
+extern FILE *file, *update_file;
 
 void Print_Records() {
 	file = fopen("Records.txt", "rb");
