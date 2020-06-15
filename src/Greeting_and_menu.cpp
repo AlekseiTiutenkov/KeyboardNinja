@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <conio.h>
 #include <string.h>
 #include <windows.h>
 #include "Calling_Sentence.hpp"
@@ -41,11 +42,13 @@ int Greeting_and_menu(){
                 printf("\n8)At the end of the game you can see your training result and score.\n9)You can delete any of the records by selecting the corresponding menu item..");
                 SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 4));
                 printf("\n\n\n-----------------------------------\n");
-                printf("You have 20 seconds to read the rule|");
+                printf("If you want to exit, press any key|");
                 printf("\n-----------------------------------\n");
-                SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
-              	Sleep(20000);
-				break;
+                if(getch()){
+                    SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
+                    system("CLS");
+                    break;
+                }
             case 1:
                 system("CLS");
                 Calling_Sentence();
@@ -56,11 +59,13 @@ int Greeting_and_menu(){
                 Print_Records();
                 SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 4));
                 printf("\n\n\n-----------------------------------\n");
-                printf("You have 10 seconds to read the rule|");
+                printf("If you want to exit, press any key|");
                 printf("\n-----------------------------------\n");
-                SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
-                Sleep(10000);
-                break;
+                if(getch()){
+                    SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
+                    system("CLS");
+                    break;
+                }
             case 3:
                 Delete_record();
                 break;

@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <conio.h>
 #include <string.h>
 #include <windows.h>
 #include "Console_color.hpp"

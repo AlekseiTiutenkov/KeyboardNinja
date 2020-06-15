@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <conio.h>
 #include <string.h>
 #include <windows.h>
 #include "main.hpp"
@@ -18,6 +19,7 @@ int Add_New_Record(float score, float time_all) {
 	file = fopen("Records.txt", "a+");
 	if (file == NULL) {
         printf("Error opening file");
+        getch();
         return 1;
     }
 	Player1.data = score;
