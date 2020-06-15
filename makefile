@@ -1,8 +1,8 @@
-all: main
+all: main.exe
 
-main: bin/main
+main.exe: bin/main.exe
 
-bin/main: build/main.o build/Add_New_Record.o build/Calling_Sentence.o build/Console_color.o build/Delete_record.o build/Greeting_and_menu.o build/Print_Records.o build/realize.o
+bin/main.exe: build/main.o build/Add_New_Record.o build/Calling_Sentence.o build/Console_color.o build/Delete_record.o build/Greeting_and_menu.o build/Print_Records.o build/realize.o
 	gcc -Wall -Werror build/main.o build/Add_New_Record.o build/Calling_Sentence.o build/Console_color.o build/Delete_record.o build/Greeting_and_menu.o build/Print_Records.o build/realize.o -o bin/main
 
 build/main.o: src/main.cpp
