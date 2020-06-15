@@ -2,7 +2,8 @@ language: c++
 compiler: gcc
 os: windows
 
-
+install:
+  - make install
 script:
   - make
   - cd bin
