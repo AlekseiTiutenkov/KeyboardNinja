@@ -1,6 +1,6 @@
 language: c++
 compiler: gcc
-os: windows
+
 
 script:
   - make
