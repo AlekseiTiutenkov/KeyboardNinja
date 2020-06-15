@@ -4,4 +4,5 @@ os: windows
 
 script:
   - make
+  - cd bin
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
