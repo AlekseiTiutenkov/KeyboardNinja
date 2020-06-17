@@ -1,35 +1,35 @@
-all: main.exe
+EXE = bin/KeyboardNinja
 
-main.exe: bin/main.exe
+DIR_SRC = build/src
 
-bin/main.exe: build/main.o build/Add_New_Record.o build/Calling_Sentence.o build/Console_color.o build/Delete_record.o build/Greeting_and_menu.o build/Print_Records.o build/realize.o
-	gcc -Wall -Werror build/main.o build/Add_New_Record.o build/Calling_Sentence.o build/Console_color.o build/Delete_record.o build/Greeting_and_menu.o build/Print_Records.o build/realize.o -o bin/main
+FLAGS = -Wall -Werror --std=c++11
 
-build/main.o: src/main.cpp
-	gcc -I includes -Wall -lncurses -ltinfo -Werror -c src/main.cpp -o build/main.o
+OBJ = g++ $(FLAGS) -c $^ -o $@
 
-build/Add_New_Record.o: src/Add_New_Record.cpp
-	gcc -Wall -Werror -c src/Add_New_Record.cpp -o build/Add_New_Record.o
+all: $(EXE) 
 
-build/Calling_Sentence.o: src/Calling_Sentence.cpp
-	gcc -Wall -Werror -c src/Calling_Sentence.cpp -o build/Calling_Sentence.o
+.PHONY: clean all
 
-build/Console_color.o: src/Console_color.cpp
-	gcc -Wall -Werror -c src/Console_color.cpp -o build/Console_color.o
+$(EXE): $(DIR_SRC)/main.o $(DIR_SRC)/Add_New_Record.o $(DIR_SRC)/Calling_Sentence.o $(DIR_SRC)/Console_color.o $(DIR_SRC)/Delete_record.o $(DIR_SRC)/Greeting_and_menu.o $(DIR_SRC)/Print_Records.o $(DIR_SRC)/realize.o 
+	g++ $(FLAGS) $^ -o $@
 
-build/Delete_record.o: src/Delete_record.cpp
-	gcc -Wall -Werror -c src/Delete_record.cpp -o build/Delete_record.o
-
-build/Greeting_and_menu.o: src/Greeting_and_menu.cpp
-	gcc -Wall -Werror -c src/Greeting_and_menu.cpp -o build/Greeting_and_menu.o
-
-build/Print_Records.o: src/Print_Records.cpp
-	gcc -Wall -Werror -c src/Print_Records.cpp -o build/Print_Records.o
-
-build/realize.o: src/realize.cpp
-	gcc -Wall -Werror -c src/realize.cpp -o build/realize.o
-
-.PHONY: clean
+$(DIR_SRC)/main.o: src/main.cpp
+	$(OBJ)
+$(DIR_SRC)/Add_New_Record.o: src/Add_New_Record.cpp
+	$(OBJ)
+$(DIR_SRC)/Calling_Sentence.o: src/Calling_Sentence.cpp
+	$(OBJ)
+$(DIR_SRC)/Console_color.o: src/Console_color.cpp
+	$(OBJ)
+$(DIR_SRC)/Delete_record.o: src/Delete_record.cpp
+	$(OBJ)
+$(DIR_SRC)/Greeting_and_menu.o: src/Greeting_and_menu.cpp
+	$(OBJ)
+$(DIR_SRC)/Print_Records.o: src/Print_Records.cpp
+	$(OBJ)
+$(DIR_SRC)/realize.o: src/realize.cpp
+	$(OBJ)
 
 clean:
-	rm -rf build/*.o
+	rm -rf $(DIR_SRC)/*.o
+	rm bin/*.exe
