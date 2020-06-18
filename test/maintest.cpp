@@ -87,3 +87,45 @@ TEST_CASE("Test: Entering string") {
 	
 	REQUIRE(Greeting_and_menu() == expected);
 }
+
+TEST_CASE("Test: Other characters") {
+	char Sentence[] = "\r";
+	float expected = 1;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: Other characters two") {
+	char Sentence[] = "\0";
+	float expected = 0;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: Other simvols") {
+	char Sentence[] = "\\";
+	float expected = 1;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: Other simvols two") {
+	char Sentence[] = "&&";
+	float expected = 2;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+
+TEST_CASE("Test: Other simvols three") {
+	char Sentence[] = "||";
+	float expected = 2;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+
+
+
+
+
