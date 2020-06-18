@@ -43,3 +43,42 @@ TEST_CASE("Test: razdeliteli") {
 	
 	REQUIRE(realize(Sentence) == expected);
 }
+
+TEST_CASE("Test: numbers") {
+	char Sentence[] = "135-64";
+	float expected = 5;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: 0 and 1") {
+	char Sentence[] = "0";
+	float expected = 1;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: slash n") {
+	char Sentence[] = "\n";
+	float expected = 0;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: TAB") {
+	char Sentence[] = "\t";
+	float expected = 0;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+TEST_CASE("Test: slash n&TAB") {
+	char Sentence[] = "\nand.123\t";
+	float expected = 6;
+	
+	REQUIRE(realize(Sentence) == expected);
+}
+
+
+
+
