@@ -6,7 +6,7 @@
 #include <windows.h>
 #include "Add_New_Record.hpp"
 
-float realize (char Sentence[])
+void realize (char Sentence[])
 {
 	clock_t a1,a2;
 	
@@ -29,9 +29,9 @@ float realize (char Sentence[])
 	SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
 
     char *p = strtok(Sentence, delim);
-		printf("\n-------------------------------------------------------------------------------------------------------\n");
-        printf("Your score: %6.2f \t   | \tInput time(last word): %6.2f\t |  \tInput time(All words) %6.2f  |\n", score, time, time_all);
-        printf("-------------------------------------------------------------------------------------------------------\n");
+	printf("\n-------------------------------------------------------------------------------------------------------\n");
+    printf("Your score: %6.2f \t   | \tInput time(last word): %6.2f\t |  \tInput time(All words) %6.2f  |\n", score, time, time_all);
+    printf("-------------------------------------------------------------------------------------------------------\n");
 
     while (p != NULL) {
     	
@@ -42,7 +42,7 @@ float realize (char Sentence[])
     	
     	
     	a1=clock();
-    	strcpy(string, Sentence);
+    	scanf("%s", string);
     	a2=clock();
     	
     	time_all+=(float)(a2-a1)/CLOCKS_PER_SEC;
@@ -76,7 +76,6 @@ float realize (char Sentence[])
     SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
     system("CLS");
     
-    return score;
     
     float multiplier = 0;
     multiplier = 60/time_all;
