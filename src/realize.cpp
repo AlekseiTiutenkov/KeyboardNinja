@@ -6,7 +6,7 @@
 #include <windows.h>
 #include "Add_New_Record.hpp"
 
-void realize (char Sentence[])
+float realize (char Sentence[])
 {
 	clock_t a1,a2;
 	
@@ -42,7 +42,7 @@ void realize (char Sentence[])
     	
     	
     	a1=clock();
-    	scanf("%s", string);
+    	strcpy(string, Sentence);
     	a2=clock();
     	
     	time_all+=(float)(a2-a1)/CLOCKS_PER_SEC;
@@ -75,10 +75,14 @@ void realize (char Sentence[])
     }
     SetConsoleTextAttribute(hConsole, (WORD) (( 0 << 4) | 9));
     system("CLS");
+    
+    return score;
+    
     float multiplier = 0;
     multiplier = 60/time_all;
   	if(time_all <= 60 && score > 0){
   	score*=multiplier;
+  	
   	if(k==0){
   		score +=25;
   		printf("You typed all the words without errors and completed in 60 seconds, Your score: %.2f", score);
