@@ -1,6 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include "../thirdparty/catch.hpp"
 #include "../src/Realize_test.hpp"
+#include "../src/Greeting_and_menu_test.hpp"
+
 
 TEST_CASE("Example") {
 	char Sentence[] = "Test";
@@ -80,5 +82,8 @@ TEST_CASE("Test: slash n&TAB") {
 }
 
 
-
-
+TEST_CASE("Test: Entering string") {
+	int expected = 1;
+	
+	REQUIRE(Greeting_and_menu() == expected);
+}
