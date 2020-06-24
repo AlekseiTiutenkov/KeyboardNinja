@@ -4,8 +4,8 @@ os: windows
 
 script:
   - make
-  - ./main
+  - make test
   - cd bin
-  - ./maintest
+  - ./maintest.exe
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
   - git ls-files test/ | xargs clang-format -i && git diff --exit-code
